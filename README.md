@@ -79,10 +79,13 @@ document.body.innerText=document.body.textContent=decodeURIComponent(window.loca
 
 
 ```
-string result = file.FileName;
-context.Response.Headers.Add("Cache-Control", "no-cache");
-context.Response.AddHeader("Access-Control-Allow-Origin", "*");
-context.Response.AddHeader("Access-Control-Allow-Headers", "x-requested-with");
-context.Response.AddHeader("Location", callUrl + "?msg=" + result);
-context.Response.Redirect(callUrl + "?msg=" + result);
+response.addHeader("Cache-Control", "no-cache");
+response.addHeader("Access-Control-Allow-Origin","*");
+response.addHeader("Access-Control-Allow-Headers","x-requested-with");
+response.addHeader("Location", callUrl + result);
+response.sendRedirect(callUrl + result); 
+
 ```
+callUrl：变量值是从请求头里获取的，获取前端定义的redirectParamName中的值callUrl，callUrl的名字可以修改，它指向的是前端参数redirect中的值
+
+result：是后端返回到值
