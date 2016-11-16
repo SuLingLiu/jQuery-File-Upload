@@ -1,2 +1,2 @@
-# jQuery-File-Upload
-jQuery File Upload cross
+# jQuery-File-Upload cross
+  jQuery File Upload跨域上传
